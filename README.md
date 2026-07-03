@@ -1,73 +1,93 @@
-# Page de Profil Personnel en HTML
+# My Profile Redesigned
 
 ## Description
 
-Ce projet consiste à créer une page de profil personnel en **HTML pur**, sans utiliser de CSS. L'objectif est de mettre en pratique les bases du langage HTML ainsi que l'utilisation des balises sémantiques et des formulaires.
+Ce projet est une version améliorée de mon premier projet **My Profile**, réalisé dans le cadre de ma formation à **Akieni Academy**.
+
+L'objectif est de reprendre la page de profil développée en HTML5 et d'y ajouter une mise en forme avec **CSS** afin d'améliorer son apparence, sa lisibilité et l'expérience utilisateur, tout en conservant une structure HTML sémantique.
+
+---
+
+## Objectifs
+
+- Styliser une page HTML avec CSS.
+- Améliorer la présentation du contenu.
+- Organiser les éléments à l'aide des propriétés CSS.
+- Utiliser les couleurs, les polices et les espacements.
+- Rendre la page plus agréable à consulter.
+
+---
 
 ## Fonctionnalités
 
-- Affichage du nom avec un titre principal (`h1`)
+- Présentation personnelle
 - Photo de profil
-- Présentation personnelle (biographie)
+- Biographie
 - Liste des compétences
-- Section de formation
+- Formation
 - Liens vers les réseaux sociaux
 - Formulaire de contact
-- Structure HTML sémantique
+- Mise en page réalisée avec CSS
+- Design simple et responsive
+
+---
 
 ## Structure du projet
 
-```
-/
+```text
+.
 ├── index.html
+├── style.css
 ├── README.md
 └── images/
     └── photo-profil.jpg
 ```
 
+---
+
 ## Technologies utilisées
 
 - HTML5
+- CSS3
 
-## Balises HTML utilisées
+---
 
-- `header`
-- `main`
-- `section`
-- `footer`
-- `h1`, `h2`
-- `p`
-- `img`
-- `ul`, `li`
-- `dl`, `dt`, `dd`
-- `a`
-- `form`
-- `label`
-- `input`
-- `textarea`
+## Compétences mises en pratique
 
-## Validation
+- Balises sémantiques HTML5
+- Sélecteurs CSS
+- Modèle de boîte (Box Model)
+- Couleurs et typographie
+- Marges et espacements
+- Mise en page
+- Accessibilité de base
 
-Le projet respecte les critères suivants :
+---
 
-- ✔ Structure HTML5 valide
-- ✔ Utilisation des balises sémantiques
-- ✔ Images avec attribut `alt`
-- ✔ Formulaire avec labels associés
-- ✔ Code correctement indenté
-- ✔ Commentaires dans le code
-- ✔ Compatible avec la validation W3C
+## Installation
 
-## Exécution
+1. Cloner le dépôt :
 
-1. Télécharger ou cloner le projet.
-2. Ouvrir le fichier `index.html` dans un navigateur web.
-3. Vérifier que l'image de profil est présente dans le dossier `images`.
+```bash
+git clone <url-du-depot>
+```
+
+2. Accéder au dossier du projet :
+
+```bash
+cd my-profile-redesigned
+```
+
+3. Ouvrir le fichier `index.html` dans votre navigateur.
+
+---
 
 ## Auteur
 
 **Gédéon KEDI**
 
+---
+
 ## Licence
 
-Projet réalisé dans le cadre d'un exercice pédagogique.
+Projet réalisé dans le cadre de la formation **Akieni Academy**.
