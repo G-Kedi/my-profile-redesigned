@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2 {
+    font-family: 'Merriweather', serif;
+}
+
+/* Barre de navigation */
+nav {
+    color: white;
+    padding: 2rem 10%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+
+}
+
+nav .logo {
+    width: 100px;
+    font-weight: bold;
+    z-index: 9;
+    background:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.logo img {
+    width: 90%;
+    height: auto;
+}
+
+/* Menu horizontal par défaut */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    z-index: 8;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+/* Conteneur flex pour logo + menu */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Icône hamburger */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 2px;
+    width: 25px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.4s;
+    z-index: 9;
+}
+
+/* Checkbox caché */
+#menu-checkbox {
+    display: none;
+}
+
+/* Responsive : écran ≤ 768px */
+@media (max-width: 768px) {
+    nav ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+
+    }
+
+    /* Afficher le menu si checkbox cochée */
+    #menu-checkbox:checked~ul {
+        max-height: 100vh;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+.hero-section {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: min(10vh, 100px);
+    background: url('../images/gedeonkedi.jpg') no-repeat center center/150%;
+    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%); */
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2922227a 0%, #0c0c0c 100%);
+    z-index: 2;
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%;
+}
+
+.hero-text {
+    z-index: 3;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    ;
+}
+
+.hero-text h2::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background-color: #b50000;
+}
+
+.hero-text p {
+    font-size: .875rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #b50000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1rem;
+    }
+
+    .hero-text p {
+        padding:1rem;
+    }
+}
+
+.my-skills-section {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-skills-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.my-skills {
+    width: min(1000px, 90%);
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content:center;
+    align-items: center;
+}
+
+.skill-card {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    list-style: none;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    flex: 1 1 calc(25% - 20px);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card img {
+    width: 80px;
+    height: 80px;
+}
+
+.skill-card h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.education {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px;
+    justify-content: center;
+    align-items: center;
+    background: #404040;
+    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%); */
+    border-top-left-radius: 50% 10%;
+    border-top-right-radius: 50% 10%;
+}
+
+.education h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.education-cards {
+    width: min(1000px, 90%);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.education-card {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    list-style: none;
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.education-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 600;
+    color: #b50000;
+    position: relative;
+}
+
+.education-card p {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #333;
+}
+
+.socials {
+    position: fixed;
+    bottom: 40%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    background-color: #ffffff;
+    border-radius: 0 10% 10% 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.socials a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0 10% 10% 0;
+}
+
+.socials a:hover {
+    transform: translateX(10px);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.socials a svg {
+    width: 30px;
+    height: 30px;
+    color: #b50000;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px;
+    justify-content: center;
+    align-items: center;
+    background: #404040;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.contact-section h2::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background-color: #b50000;
+}
+
+.contact-form {
+    width: min(500px, 90%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.contact-form .submit {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #b50000;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit:hover {
+    background-color: #8a0000;
+}
+
+.contact-form .submit:active {
+    transform: scale(0.98);
+}
+
+.contact-form label {
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 0.875rem;
+}
