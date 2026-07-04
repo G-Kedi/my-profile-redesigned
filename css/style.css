@@ -123,6 +123,7 @@ nav ul li a:hover {
     display: flex;
     position: relative;
     height: 100vh;
+    min-height:500px;
     width: 100%;
     justify-content: center;
     align-items: flex-end;
